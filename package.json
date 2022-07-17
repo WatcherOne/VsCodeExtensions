@@ -1,6 +1,6 @@
 {
-	"name": "zb-extension",
-	"displayName": "zb-extension",
+	"name": "zb-extensions",
+	"displayName": "zb-extensions",
 	"description": "a easy demo of extension",
 	"version": "1.0.0",
 	"author": {
@@ -16,7 +16,7 @@
 	],
 	"repository": {
         "type": "git",
-        "url": "git+https://github.com/WatcherOne/VsCodeSnippets.git"
+        "url": "git+https://github.com/WatcherOne/VsCodeExtensions.git"
     },
 	"engines": {
 		"vscode": "^1.69.0"
@@ -133,7 +133,7 @@
         "@vscode/test-electron": "^2.1.5"
     },
     "bugs": {
-        "url": "https://github.com/WatcherOne/VsCodeSnippets/issues"
+        "url": "https://github.com/WatcherOne/VsCodeExtensions/issues"
     },
-    "homepage": "https://github.com/WatcherOne/VsCodeSnippets#readme"
+    "homepage": "https://github.com/WatcherOne/VsCodeExtensions#readme"
 }

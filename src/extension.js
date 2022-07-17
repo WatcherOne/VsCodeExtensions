@@ -92,20 +92,19 @@ exports.activate = (context) => {
 
         for (let i = 0; i < selectedLen; i++) {
 			const selection = editor.selections[i]
+            const selectedText = document.getText(selection)
+            const { line, character } = selection.active
+            const position = new vscode.Position(line, character)
 
-			let wordUnderCursor = ''
-			const rangeUnderCursor = document.getWordRangeAtPosition(selection.active)
-			if (rangeUnderCursor) {
-				// 获得鼠标下的文案
-				wordUnderCursor = document.getText(rangeUnderCursor)
-			}
-			const selectedText = document.getText(selection) || wordUnderCursor
-
-			if (selectedText.trim().length !== 0) {
+			if (selectedText.trim().length) {
 				await editor.edit(editBuilder => {
-					editBuilder.replace(rangeUnderCursor, serialArr[i])
+					editBuilder.replace(selection, serialArr[i])
 				})
-			}
+			} else {
+                await editor.edit(editBuilder => {
+					editBuilder.insert(position, serialArr[i])
+				})
+            }
 		}
     }))
 }
