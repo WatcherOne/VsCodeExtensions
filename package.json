@@ -1,0 +1,139 @@
+{
+	"name": "zb-extension",
+	"displayName": "zb-extension",
+	"description": "a easy demo of extension",
+	"version": "1.0.0",
+	"author": {
+        "name": "watcher",
+        "email": "286154864@qq.com",
+        "url": "https://github.com/WatcherOne"
+    },
+	"publisher": "zhubo",
+	"keywords": [
+		"VisualStudioCode",
+		"extension",
+		"javascript"
+	],
+	"repository": {
+        "type": "git",
+        "url": "git+https://github.com/WatcherOne/VsCodeSnippets.git"
+    },
+	"engines": {
+		"vscode": "^1.69.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "resources/logo.png",
+	"main": "./src/extension.js",
+	"activationEvents": [
+        "onCommand:consoleLog.showLog",
+		"onStartupFinished",
+		"onCommand:serialize.order"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "configuration",
+			"properties": {
+				"consoleLog.logType": {
+					"type": "string",
+					"enum": [
+						"log",
+						"warn",
+						"error",
+						"table",
+						"trace"
+					],
+					"default": "log",
+					"description": "select the log type"
+				},
+				"consoleLog.logPrefix": {
+					"type": "string",
+					"default": "",
+					"description": "the prefix of the log message"
+				},
+				"consoleLog.logExtenSymbol": {
+					"type": "string",
+					"default": "----",
+					"description": "the result of the log message to show symbol"
+				},
+				"consoleLog.quote": {
+					"type": "string",
+					"enum": [
+						"'",
+						"`",
+						"\""
+					],
+					"default": "'",
+					"description": "single quote, backtick or double quote"
+				},
+				"consoleLog.addSemicolonInEnd": {
+					"type": "boolean",
+					"default": false,
+					"description": "whether to add or not a semicolon in the end of the log message"
+				},
+				"consoleLog.showFileName": {
+					"type": "boolean",
+					"default": true,
+					"description": "show current console for fileName"
+				},
+				"consoleLog.showRow": {
+					"type": "boolean",
+					"default": true,
+					"description": "show current console for row"
+				},
+				"serialize.number": {
+					"type": "string",
+					"enum": [
+						"1,2,3,4...",
+						"a,b,c,d..."
+					],
+					"default": "1",
+					"description": "select a type to increment"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.clearLog",
+				"title": "clear current all console.log",
+				"category": "Clear"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "consoleLog.showLog",
+				"key": "ctrl+shift+l",
+				"mac": "ctrl+shift+l",
+				"when": "editorFocus"
+			},
+			{
+				"command": "serialize.order",
+				"key": "ctrl+shift+n",
+				"mac": "ctrl+shift+n",
+				"when": "editorFocus"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+        "@types/vscode": "^1.69.0",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "16.x",
+        "eslint": "^8.18.0",
+        "glob": "^8.0.3",
+        "mocha": "^10.0.0",
+        "typescript": "^4.7.4",
+        "@vscode/test-electron": "^2.1.5"
+    },
+    "bugs": {
+        "url": "https://github.com/WatcherOne/VsCodeSnippets/issues"
+    },
+    "homepage": "https://github.com/WatcherOne/VsCodeSnippets#readme"
+}
