@@ -3,7 +3,6 @@
 ```
 some extensions for visual studio code
 ```
-
 [![](https://vsmarketplacebadge.apphb.com/version/hollowtree.vue-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=zhubo.zb-extensions)
 [![](https://vsmarketplacebadge.apphb.com/installs/hollowtree.vue-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=zhubo.zb-extensions)
 
@@ -12,10 +11,7 @@ some extensions for visual studio code
 ![extensions in action](resources/serial.gif)
 --------------------------------------
 
-##### 2022/07/16 (1.0.1)
-* updated more description and fixed some snippets
-
-##### 2022/07/16 (1.0.0)
+##### 2022/07/17 (1.0.0)
 * Frist version to try use
 
 --------------------------------------
