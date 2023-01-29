@@ -15,7 +15,7 @@ some extensions for visual studio code
 * Frist version to try use
 
 --------------------------------------
-#### 开发VsCode插件流程 ####
+#### 开发VsCode插件流程[package.json] ####
 ```
 // 一个插件必须在该属性中描述的什么条件下被激活
 // contributes: 设置激活命令执行, #number 都是在这个属性里面配置的
